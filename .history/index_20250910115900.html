@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nova Services — First Step</title>
+  <meta name="description" content="A clean, responsive starter page for Nova Services using only core HTML tags.">
+  <style>
+    /* Minimal, mobile‑first styles to keep it responsive */
+    :root { --max: 1100px; }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.6; }
+    header, nav, main, section, article, aside, footer { display: block; }
+    a { text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+    .wrap { width: min(100%, var(--max)); margin: 0 auto; padding: 1rem; }
+
+    /* Header */
+    header { border-bottom: 1px solid #e6e6e6; }
+    .brand { display: flex; align-items: center; gap: .75rem; }
+    .brand h1 { font-size: 1.25rem; margin: 0; }
+
+    /* Simple nav */
+    nav { margin-top: .5rem; }
+    nav ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; gap: .75rem; }
+    nav a { padding: .5rem .75rem; border-radius: .5rem; border: 1px solid #e6e6e6; }
+
+    /* Hero */
+    .hero { padding: 2rem 0; }
+    .hero h2 { margin: 0 0 .5rem 0; font-size: clamp(1.4rem, 3vw + .5rem, 2.2rem); }
+    .hero p { margin: 0 0 1rem 0; }
+
+    /* Grid sections */
+    .grid { display: grid; gap: 1rem; }
+    /* 1 column on phones, 2+ on larger screens */
+    @media (min-width: 720px) { .grid.cols-2 { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 960px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+
+    article, aside { border: 1px solid #eee; border-radius: .75rem; padding: 1rem; }
+    article h3 { margin-top: 0; }
+
+    /* Contact form */
+    form { display: grid; gap: .75rem; }
+    input, textarea, button { width: 100%; padding: .75rem; border: 1px solid #e1e1e1; border-radius: .5rem; font: inherit; }
+    button { cursor: pointer; }
+
+    /* Footer */
+    footer { margin-top: 2rem; border-top: 1px solid #e6e6e6; font-size: .95rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <a href="#home" aria-label="Nova Services Home">
+          <img src="https://via.placeholder.com/48x48?text=N" alt="Nova Services logo" width="48" height="48">
+        </a>
+        <h1>Nova Services</h1>
+      </div>
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="wrap">
+    <section class="hero" aria-labelledby="welcome">
+      <h2 id="welcome">Building practical tech solutions for real businesses</h2>
+      <p>Nova Services helps organizations plan, build, and support software—from web apps to data workflows—focused on measurable outcomes.</p>
+      <p><a href="#contact">Start a conversation →</a></p>
+    </section>
+
+    <section id="services" aria-labelledby="svc-title">
+      <h2 id="svc-title">Core Services</h2>
+      <div class="grid cols-3">
+        <article>
+          <h3>Web Development</h3>
+          <p>Modern, accessible websites and apps using proven technologies.</p>
+          <ul>
+            <li>Landing sites & portals</li>
+            <li>APIs & integrations</li>
+            <li>Performance & SEO basics</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Data & Automation</h3>
+          <p>Streamline operations with scripts, dashboards, and simple automation.</p>
+          <ul>
+            <li>ETL & reporting</li>
+            <li>Task automation</li>
+            <li>Lightweight analytics</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Advisory</h3>
+          <p>Short, practical engagements to plan roadmaps and reduce risk.</p>
+          <ul>
+            <li>Tech strategy</li>
+            <li>Architecture reviews</li>
+            <li>Pilot & MVP scoping</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
+      <div class="grid cols-2">
+        <article>
+          <h3>Who we are</h3>
+          <p>We are a small, focused team that delivers reliable software and clear documentation. We value accessibility, maintainability, and security-by-default.</p>
+        </article>
+        <aside>
+          <h3>At a glance</h3>
+          <ul>
+            <li>Chicago-based, remote‑friendly</li>
+            <li>Transparent, fixed‑scope projects</li>
+            <li>Open‑source leaning</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p>Tell us a little about your project and we’ll reply with next steps.</p>
+      <form>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="What would you like to build?" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>&copy; <time id="year" aria-label="current year">2025</time> Nova Services. All rights reserved.</p>
+      <p><a href="#home">Back to top</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Keep the year current without extra libraries
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
